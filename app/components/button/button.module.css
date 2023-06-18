@@ -1,0 +1,61 @@
+.button {
+  width: 180px;
+  height: 50px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.disco {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: scaleX(1.5) scaleY(1);
+  filter: blur(8px);
+}
+
+.disco:before {
+  content: "";
+  position: absolute;
+  width: 190px;
+  top: 50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: conic-gradient(
+    rgba(83, 255, 36, 0.7),
+    transparent,
+    transparent
+  );
+  animation: disco 4s linear infinite;
+}
+
+.content {
+  position: absolute;
+  background: #000;
+  left: 2px;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+@keyframes disco {
+  0% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateY(-50%) rotate(1turn);
+  }
+}
